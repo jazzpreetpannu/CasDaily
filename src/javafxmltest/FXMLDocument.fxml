@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="638.0" prefWidth="925.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmltest.FXMLDocumentController">
+   <center>
+      <TabPane prefHeight="610.0" prefWidth="735.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+         <tabs>
+            <Tab text="General counts">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="541.0" prefWidth="712.0">
+                     <children>
+                        <TableView fx:id="resultId" editable="true" layoutX="151.0" layoutY="80.0" prefHeight="326.0" prefWidth="547.0" AnchorPane.bottomAnchor="158.0" AnchorPane.leftAnchor="151.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="80.0">
+                           <columns>
+                              <TableColumn fx:id="comand" minWidth="267.0" prefWidth="267.0" sortable="false" text="comand" />
+                              <TableColumn fx:id="count" minWidth="350.0" prefWidth="480.0" sortable="false" text="count" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="modBtn_gen" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleReadButton" prefHeight="34.0" prefWidth="105.0" text="Create" />
+                        <Label fx:id="helo" layoutX="349.0" layoutY="519.0" prefHeight="43.0" prefWidth="310.0" />
+                        <Button fx:id="writeBtn_gen" layoutX="523.0" layoutY="453.0" mnemonicParsing="false" onAction="#handleWriteButton" prefHeight="42.0" prefWidth="136.0" text="Print in Excel" AnchorPane.bottomAnchor="69.0" AnchorPane.rightAnchor="58.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Error Count">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="errorId" layoutX="151.0" layoutY="78.0" prefHeight="326.0" prefWidth="552.0" AnchorPane.bottomAnchor="160.0" AnchorPane.leftAnchor="151.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="78.0">
+                           <columns>
+                              <TableColumn fx:id="error" prefWidth="229.0" sortable="false" text="ERROR" />
+                              <TableColumn fx:id="count_err" prefWidth="344.0" sortable="false" text="Count" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="modBtn_err" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleReadButton" prefHeight="34.0" prefWidth="105.0" text="Create" />
+                        <Button fx:id="writeBtn_err" layoutX="523.0" layoutY="450.0" mnemonicParsing="false" onAction="#handleWriteButton" prefHeight="42.0" prefWidth="136.0" text="Print in Excel" AnchorPane.bottomAnchor="72.0" AnchorPane.rightAnchor="58.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="OSD and other">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="osdId" layoutX="151.0" layoutY="78.0" prefHeight="326.0" prefWidth="552.0" AnchorPane.bottomAnchor="160.0" AnchorPane.leftAnchor="151.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="78.0">
+                           <columns>
+                              <TableColumn fx:id="osd" prefWidth="229.0" sortable="false" text="Command" />
+                              <TableColumn fx:id="count_osd" prefWidth="344.0" sortable="false" text="Count" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="modBtn_osd" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleReadButton" prefHeight="34.0" prefWidth="105.0" text="Create" />
+                        <Button fx:id="writeBtn_osd" layoutX="523.0" layoutY="450.0" mnemonicParsing="false" onAction="#handleWriteButton" prefHeight="42.0" prefWidth="136.0" text="Print in Excel" AnchorPane.bottomAnchor="72.0" AnchorPane.rightAnchor="58.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Live Subscriber Count">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="livSubId" layoutX="153.0" layoutY="79.0" prefHeight="332.0" prefWidth="551.0" AnchorPane.bottomAnchor="153.0" AnchorPane.leftAnchor="153.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="79.0">
+                           <columns>
+                              <TableColumn fx:id="subsciber" minWidth="50.0" prefWidth="251.0" sortable="false" text="Subscriber" />
+                              <TableColumn fx:id="count_sub" prefWidth="311.0" sortable="false" text="Count" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="modBtn_livsub" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleReadButton" prefHeight="34.0" prefWidth="105.0" text="Create" />
+                        <Button fx:id="writeBtn_livsub" layoutX="522.0" layoutY="460.0" mnemonicParsing="false" onAction="#handleWriteButton" prefHeight="42.0" prefWidth="136.0" text="Print in Excel" AnchorPane.bottomAnchor="62.0" AnchorPane.rightAnchor="59.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Offline Subscriber Count">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="offlineSubId" layoutX="154.0" layoutY="81.0" prefHeight="330.0" prefWidth="557.0" AnchorPane.bottomAnchor="153.0" AnchorPane.leftAnchor="154.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="81.0">
+                           <columns>
+                              <TableColumn fx:id="off_subscriber" prefWidth="248.0" sortable="false" text="Offline Subscriber" />
+                              <TableColumn fx:id="count_offsub" prefWidth="321.0" sortable="false" text="Count" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="modBtn_offsub" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleReadButton" prefHeight="34.0" prefWidth="105.0" text="Create" />
+                        <Button fx:id="writeBtn_offsub" layoutX="528.0" layoutY="458.0" mnemonicParsing="false" onAction="#handleWriteButton" prefHeight="42.0" prefWidth="136.0" text="Print in Excel" AnchorPane.bottomAnchor="64.0" AnchorPane.rightAnchor="53.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="MIS">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="misId" layoutX="159.0" layoutY="71.0" prefHeight="429.0" prefWidth="523.0" AnchorPane.bottomAnchor="139.0" AnchorPane.leftAnchor="159.0" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="71.0">
+                           <columns>
+                              <TableColumn fx:id="mis" prefWidth="367.0" sortable="false" text=" " />
+                              <TableColumn fx:id="count_mis" prefWidth="151.0" sortable="false" text="Count" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="modBtn_mis" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleReadButton" prefHeight="34.0" prefWidth="105.0" text="Create" />
+                        <Button fx:id="writeBtn_mis" layoutX="542.0" layoutY="465.0" mnemonicParsing="false" onAction="#handleWriteButton" prefHeight="42.0" prefWidth="136.0" text="Print in Excel" AnchorPane.bottomAnchor="57.0" AnchorPane.rightAnchor="39.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </center>
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="frm_loc" layoutX="60.0" layoutY="125.0" mnemonicParsing="false" onAction="#handleImportReport" prefHeight="45.0" prefWidth="134.0" text="Select File " textAlignment="CENTER" />
+                  <Label layoutX="7.0" layoutY="87.0" prefHeight="27.0" prefWidth="162.0" text="Import from other Location:" />
+                  <DatePicker fx:id="datepick" layoutX="13.0" layoutY="14.0" onAction="#handledateButton" />
+               </children>
+            </Pane>
+            <Pane layoutX="8.0" layoutY="208.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="frm_def" layoutX="14.0" layoutY="70.0" mnemonicParsing="false" onAction="#handleImportReport" prefHeight="45.0" prefWidth="187.0" text="Import Daily Report" textAlignment="CENTER" />
+                  <Label layoutY="14.0" prefHeight="35.0" prefWidth="159.0" text="Import from Default Loation:" />
+               </children>
+            </Pane>
+            <Button fx:id="ClearAll" layoutY="547.0" mnemonicParsing="false" onAction="#handleImportReport" prefHeight="50.0" prefWidth="211.0" text="Clear All" />
+         </children>
+      </AnchorPane>
+   </left>
+   <top>
+      <VBox prefHeight="45.0" prefWidth="907.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar prefHeight="0.0" prefWidth="907.0">
+               <menus>
+                  <Menu mnemonicParsing="false" text="File">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Edit">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Help">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+         </children>
+      </VBox>
+   </top>
+</BorderPane>
